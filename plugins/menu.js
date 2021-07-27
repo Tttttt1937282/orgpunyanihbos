@@ -66,7 +66,7 @@ let handler  = async (m, { conn, usedPrefix: _p, DevMode }) => {
           if (menu.help) groups[tag].push(menu)
     }
     conn.menu = conn.menu ? conn.menu : {}
-    let before = conn.menu.before || ` ╭─「 ${conn.getName(conn.user.jid)} 」
+    let before = conn.menu.before || ` ╭─「 Ninja Bot 」
 │ Hai, %name!
 │
 │ 
@@ -84,7 +84,7 @@ let handler  = async (m, { conn, usedPrefix: _p, DevMode }) => {
       _text += header.replace(/%category/g, tags[tag]) + '\n'
       for (let menu of groups[tag]) {
         for (let help of menu.help)
-          _text += body.replace(/%cmd/g, menu.prefix ? help : '.' + help).replace(/%islimit/g, menu.limit ? ' (Limit)' : '')  + '\n'
+          _text += body.replace(/%cmd/g, menu.prefix ? help : '%p' + help).replace(/%islimit/g, menu.limit ? ' (Limit)' : '')  + '\n'
       }
       _text += footer + '\n'
     }
@@ -112,8 +112,9 @@ let handler  = async (m, { conn, usedPrefix: _p, DevMode }) => {
     }
   }
 }
-handler.customPrefix = ['💻 Menu 💻']
-handler.command = new RegExp
+handler.help = ['menu','help','?']
+handler.tags = ['main']
+handler.command = /^(menu|help|\?)$/i
 
 handler.fail = null
 handler.exp = 2
