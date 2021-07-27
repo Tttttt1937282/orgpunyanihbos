@@ -23,7 +23,6 @@ let handler  = async (m, { conn, usedPrefix }) => {
 ╠═〘 DONASI 〙 ═
 ╠➥ Gopay: 081949589655
 ║
-╠═ Request? ${package.bugs.url}
 ╠═ officiall Group *${conn.getName(conn.user.jid)}* :
 ${(global.linkGC).map((v, i) => '║ *Group ' + (i + 1) + '*\n║' + v).join`\n║\n`}
 ║
