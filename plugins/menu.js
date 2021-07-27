@@ -32,7 +32,7 @@ let handler  = async (m, { conn, usedPrefix: _p, DevMode }) => {
       'anime': 'Anime',
       'audio': 'Filter Audio',
       'kerang': 'Kerang Ajaib',
-      'dewasa': '18+'
+      'dewasa': '18+',
       'quotes': 'Quotes',
       'nulis': 'Mager Nulis',
       'internet': 'Internet',
