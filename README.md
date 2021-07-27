@@ -2,6 +2,8 @@
 [`Group Whatsapp`](https://chat.whatsapp.com/Lb4Emjih98rBiCZiZoS2eM)
 ### FOR TERMUX USER
 ```bash
+> pkg remove game-repo
+> pkg remove science-repo
 > pkg update && pkg upgrade
 > pkg install git -y
 > pkg install nodejs -y
