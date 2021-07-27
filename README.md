@@ -7,9 +7,9 @@
 > pkg install nodejs -y
 > pkg install ffmpeg -y
 > pkg install imagemagick -y
-> git clone https://github.com/BochilGaming/games-wabot
-> cd games-wabot
-> npm install
+> git clone https://github.com/BotPunya-ORG/orgpunyanihbos
+> cd orgpunyanihbos
+> npm start
 ```
 ###### Run
 ```bash
