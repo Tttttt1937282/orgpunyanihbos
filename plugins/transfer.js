@@ -27,6 +27,24 @@ let handler = async (m, { conn, args, usedPrefix, DevMode }) => {
                     }
                 } else conn.reply(m.chat, `Uang kamu tidak mencukupi untuk mentransfer Money sebesar ${count}`.trim(), m)
                 break
+            case 'xp':
+                if (global.DATABASE._data.users[m.sender].exp >= count * 1) {
+                    try {
+                        global.DATABASE._data.users[m.sender].exp -= count * 1
+                        global.DATABASE._data.users[who].exp += count * 1
+                        conn.reply(m.chat, `Berhasil mentransfer Xp sebesar ${count}`.trim(), m)
+                    } catch (e) {
+                        global.DATABASE._data.users[m.sender].exp += count * 1
+                        m.reply('Gagal Menstransfer')
+                        console.log(e)
+                        if (DevMode) {
+                            for (let jid of global.owner.map(v => v.replace(/[^0-9]/g, '') + '@s.whatsapp.net').filter(v => v != conn.user.jid)) {
+                                conn.sendMessage(jid, 'Transfer.js error\nNo: *' + m.sender.split`@`[0] + '*\nCommand: *' + m.text + '*\n\n*' + e + '*', MessageType.text)
+                            }
+                        }
+                    }
+                } else conn.reply(m.chat, `Uang kamu tidak mencukupi untuk mentransfer Money sebesar ${count}`.trim(), m)
+                break
             case 'potion':
                 if (global.DATABASE._data.users[m.sender].potion >= count * 1) {
                     try {
@@ -154,7 +172,7 @@ let handler = async (m, { conn, args, usedPrefix, DevMode }) => {
                 } else conn.reply(m.chat, `Legendary crate kamu kamu tidak cukup`.trim(), m)
                 break
             default:
-                return conn.reply(m.chat, `Gunakan format ${usedPrefix}transfer <type> <jumlah> <@tag>\ncontoh penggunaan: *${usedPrefix}transfer money 100 @tag*\n\n*List yang bisa di transfer*\nMoney\nPotion\nSampah\nDiamond\nCommon\nUncommon\nMythic\nLegendary`.trim(), m)
+                return conn.reply(m.chat, `Gunakan format ${usedPrefix}transfer <type> <jumlah> <@tag>\ncontoh penggunaan: *${usedPrefix}transfer money 100 @tag*\n\n*List yang bisa di transfer*\nXp\nMoney\nPotion\nSampah\nDiamond\nCommon\nUncommon\nMythic\nLegendary`.trim(), m)
         }
     } catch (e) {
         conn.reply(m.chat, `Format yang anda gunakan salah\n\nGunakan format ${usedPrefix}transfer <type> <jumlah> <@tag>\ncontoh penggunaan: *${usedPrefix}transfer money 100 @tag*`.trim(), m)
