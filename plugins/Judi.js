@@ -15,7 +15,7 @@ let handler = async (m, { conn, args, usedPrefix, DevMode }) => {
         if (args.length < 1) return conn.reply(m.chat, usedPrefix + 'judi <jumlah>\n ' + usedPrefix + 'judi 1000', m)
         if (global.DATABASE._data.users[m.sender].money >= count * 1) {
             global.DATABASE._data.users[m.sender].money -= count * 1
-            await m.reply('*Jangan judi gk bakal menang!!, kalau gk percaya gpp*') //Kwkwwkkwlwlw
+            await m.reply('*Jangan judi gk halal!!*') //Kwkwwkkwlwlw
             if (Aku > Kamu) {
                 conn.reply(m.chat, `aku roll:${Aku}\nKamu roll: ${Kamu}\n\nkamu *Kalah*, kamu kehilangan ${count} Money`.trim(), m)
             } else if (Aku < Kamu) {
@@ -25,7 +25,7 @@ let handler = async (m, { conn, args, usedPrefix, DevMode }) => {
                 global.DATABASE._data.users[m.sender].money += count * 1
                 conn.reply(m.chat, `aku roll:${Aku}\nKamu roll: ${Kamu}\n\nkamu *Seri*, kamu Mendapatkan ${count * 1} Money`.trim(), m)
             }
-        } else conn.reply(m.chat, `uang kamu tidak cukup untuk melakukan judi sebesar ${count} Money`.trim(), m)
+        } else conn.reply(m.chat, `duit lu ga cukup tolol untuk melakukan judi sebesar ${count} Money`.trim(), m)
     } catch (e) {
         console.log(e)
         m.reply('Error!!')
