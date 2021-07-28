@@ -491,8 +491,8 @@ Untuk mematikan fitur ini, ketik
                     return
                 break
         }
-        await this.sendMessage(from, 'Maaf, Tolong jangan telfon BOT!!', MessageType.extendedText)
-        //await this.blockUser(from, 'add')
+        await this.sendMessage(from, 'Maaf, Kamu diblock silahkan hubungi owner untuk unblock!!', MessageType.extendedText)
+        await this.blockUser(from, 'add')
     }
 }
 
