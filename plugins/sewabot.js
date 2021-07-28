@@ -4,12 +4,13 @@ const sewabot = () => {
 
 Sewa Seminggu : 10k
 Sewa Sebulan : 25k
+Sewa Permanent : 50k
 
 *Payment :*
-_Pulsa Dan Dana_
+_Pulsa_
 
 Minat?PC
-Wa.me/6287834993722
+Wa.me/6281949589655
 `
 }
 handler.help = ['sewa']
