@@ -35,7 +35,7 @@ let handler = async function (m, { text, usedPrefix }) {
 │ *Silahkan Ketik .rules*
 │ *Untuk Melanjutkan Pengguna*
 ╰━━━━━━━━━━━━┈ ❋ཻུ۪۪⸙
-*「 SOMEONEBOT 」*
+*「 NINJABOT 」*
 `.trim())
 }
 handler.help = ['daftar', 'reg', 'register'].map(v => v + ' <nama>.<umur>')
