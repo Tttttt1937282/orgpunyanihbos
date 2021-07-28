@@ -13,7 +13,7 @@ handler.before = async function (m) {
             m.reply(`*Benar!*\n+${this.caklontong[id][2]} XP\n${json.result.deskripsi}`)
             clearTimeout(this.caklontong[id][3])
             delete this.caklontong[id]
-        } else if (similarity(m.text.toLowerCase(), json.data.jawaban.toLowerCase().trim()) >= threshold) m.reply(`*Dikit Lagi!*`)
+        } else if (similarity(m.text.toLowerCase(), json.result.jawaban.toLowerCase().trim()) >= threshold) m.reply(`*Dikit Lagi!*`)
         else m.reply(`*Salah!*`)
     }
     return !0
